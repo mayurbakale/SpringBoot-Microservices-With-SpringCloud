@@ -1,0 +1,12 @@
+insert into EXCHANGE_VALUE (ID,CURRENCY_FROM,CURRENCY_TO,CONVERSION_MULTIPLE,PORT) values (10001,'USD','INR',65,8000);
+insert into EXCHANGE_VALUE (ID,CURRENCY_FROM,CURRENCY_TO,CONVERSION_MULTIPLE,PORT) values (10002,'EUR','INR',75,8001);
+insert into EXCHANGE_VALUE (ID,CURRENCY_FROM,CURRENCY_TO,CONVERSION_MULTIPLE,PORT) values (10003,'AUD','INR',25,8002);
+
+http://localhost:8000/currency-exchange/USD/to/INR
+http://localhost:8001/currency-exchange/AUD/to/INR
+http://localhost:8100/currency-convertor/from/INR/to/INR/quantity/1000
+http://localhost:8100/currency-convertor-feign/from/EUR/to/INR/quantity/1000
+http://localhost:8000/h2-console/login.do?jsessionid=a5d644496725bceaed317289a1976676
+http://localhost:8001/h2-console/login.do?jsessionid=2f198a95f0655c543fb11074d3586f0c
+
+
