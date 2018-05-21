@@ -13,5 +13,6 @@ import com.udemy.microservices.currencyconversionservice.bean.CurrencyConversion
 public interface CurrencyExchangeServiceProxy {
 
 	@GetMapping("/currency-exchange/{from}/to/{to}")
+	//@GetMapping("/currency-exchange-service/currency-exchange/{from}/to/{to}")
 	public CurrencyConversionBean retrieveExchangeValue(@PathVariable("from") String from, @PathVariable("to") String to);
 }

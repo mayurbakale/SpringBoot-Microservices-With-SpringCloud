@@ -4,9 +4,25 @@ insert into EXCHANGE_VALUE (ID,CURRENCY_FROM,CURRENCY_TO,CONVERSION_MULTIPLE,POR
 
 http://localhost:8000/currency-exchange/USD/to/INR
 http://localhost:8001/currency-exchange/AUD/to/INR
-http://localhost:8100/currency-convertor/from/INR/to/INR/quantity/1000
 http://localhost:8100/currency-convertor-feign/from/EUR/to/INR/quantity/1000
 http://localhost:8000/h2-console/login.do?jsessionid=a5d644496725bceaed317289a1976676
 http://localhost:8001/h2-console/login.do?jsessionid=2f198a95f0655c543fb11074d3586f0c
+http://localhost:8080/limits
+http://localhost:8080/actuator/refresh
+http://localhost:8888/limits-service/default - Cloud Config
+http://localhost:8888/limits-service/dev - Cloud Config
+http://localhost:8761/ - Eureka
+http://localhost:9411/zipkin - Zipkin
+http://localhost:8888/limits-service/default - Spring Cloud Config Default Profile
+http://localhost:8888/limits-service/dev - Spring Cloud Config Dev Profile
+http://localhost:8080/bus/refresh - Bus Refresh
+
+http://localhost:8765/currency-exchange-service/currency-exchange/from/EUR/to/INR 
+http://localhost:8765/currency-conversion-service/currency-converter-feign/from/USD/to/INR/quantity/10 - Zuul API Gateway
+
+
+RABBIT_URI=amqp://localhost java -jar zipkin-server-2.5.2-exec.jar
+SET RABBIT_URI=amqp://localhost 
+java -jar zipkin-server-2.5.2-exec.jar
 
 

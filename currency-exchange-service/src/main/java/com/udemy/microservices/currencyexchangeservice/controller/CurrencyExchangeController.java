@@ -2,6 +2,8 @@ package com.udemy.microservices.currencyexchangeservice.controller;
 
 import java.math.BigDecimal;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,7 @@ import com.udemy.microservices.currencyexchangeservice.repository.CurrencyExchan
 
 @RestController
 public class CurrencyExchangeController {
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private Environment environment;
@@ -26,6 +29,7 @@ public class CurrencyExchangeController {
 		value.setPort(Integer.parseInt(environment.getProperty("local.server.port")));*/
 		ExchangeValue value = repository.findByFromAndTo(from, to);
 		value.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
+		logger.info("{}",value);
 		return value;
 	}
 }

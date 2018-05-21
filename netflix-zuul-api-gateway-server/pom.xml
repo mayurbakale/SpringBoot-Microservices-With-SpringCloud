@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.udemy.microservices</groupId>
-	<artifactId>currency-conversion-service</artifactId>
+	<artifactId>netflix-zuul-api-gateway-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>currency-conversion-service</name>
+	<name>netflix-zuul-api-gateway-server</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -27,39 +27,21 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-bus</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 		<dependency>
-		    <groupId>org.springframework.cloud</groupId>
-		    <artifactId>spring-cloud-starter-feign</artifactId>
-		    <version>1.4.4.RELEASE</version>
+ 		   <groupId>org.springframework.cloud</groupId>
+		   <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+		   <version>1.4.4.RELEASE</version>
 		</dependency>
-
 		<dependency>
-		    <groupId>org.springframework.cloud</groupId>
-		    <artifactId>spring-cloud-starter-ribbon</artifactId>
-		    <version>1.4.4.RELEASE</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>org.springframework.cloud</groupId>
-		    <artifactId>spring-cloud-starter-eureka</artifactId>
-		    <version>1.4.4.RELEASE</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -70,10 +52,21 @@
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-netflix-core</artifactId>
+		    <version>1.0.0.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-zuul</artifactId>
+		    <version>1.4.4.RELEASE</version>
+		</dependency>	
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>
 
 	<dependencyManagement>
